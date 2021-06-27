@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 class Book extends Component {
-    state = {}
+    state = {
+        book:[]
+    }
     render() {
         return (
             <div className="book">
