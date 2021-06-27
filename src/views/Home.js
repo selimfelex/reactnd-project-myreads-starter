@@ -6,14 +6,13 @@ import {getAll} from '../BooksAPI';
 
 class Home extends Component {
     
-    state = {
 
-      }
     // make Async request to get all books and add them to the shelf view
-    async  componentDidMount()  {  try {
-        const allBooks = await getAll();
-        console.log(allBooks);
-        this.props.addBooks(allBooks);
+    async  componentDidMount()  {
+        try {
+        const books = await getAll();
+        console.log(books);
+        this.props.addBooks(books);
 
     } catch (error) {
         console.log(error);
@@ -27,9 +26,17 @@ class Home extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf title='Currently Reading' />
-            <Shelf title='Want To Read'/>
-            <Shelf title='Read'/>
+            <Shelf title='Currently Reading' 
+            books={this.props.currentlyReading}
+            moveBook={this.props.moveBook}/>
+
+            <Shelf title='Want To Read'
+            books={this.props.wantToRead}
+            moveBook={this.props.moveBook}/>
+
+            <Shelf title='Read'
+            books={this.props.read}
+            moveBook={this.props.moveBook}/>
 
 
           </div>

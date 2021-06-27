@@ -4,19 +4,22 @@ import React, { Component } from 'react';
 class index extends Component {
     constructor() {
         super();
-        this.state= {
-            allBooks: [],
+        this.state = {
+            books: [],
             wantToRead: [],
             read: [],
             currentlyReading: [],
-            addBooks: allBooks => {
-            const read = allBooks.filter(book => book.Shelf === "read");
+            addBooks: books => {
+            const read = books.filter(book => book.shelf === "read");
+            console.log(books)
+            console.log(read);
 
-            const wantToRead = allBooks.filter(book => book.Shelf === 'wantToRead');
+            const wantToRead = books.filter(book => book.shelf === 'wantToRead');
 
-            const currentlyReading = allBooks.filter(book => book.Shelf === "currentlyReading");
+            const currentlyReading = books.filter(book => book.shelf === "currentlyReading");
 
-            this.setState({ allBooks, wantToRead, read, currentlyReading });
+            this.setState({ books, wantToRead, read, currentlyReading });
+            
 
         },
         moveBook: (book, newShelf, allShelfs) => {
