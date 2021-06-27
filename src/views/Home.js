@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Shelf from '../components/Shelf';
 // we nned to import getall function from the API
 import {getAll} from '../BooksAPI';
-
+//import { Link } from 'react-router-dom';
+import Srch from '../components/Srch';
 
 class Home extends Component {
     
@@ -41,9 +42,9 @@ class Home extends Component {
 
           </div>
         </div>
-        <div className="open-search">
-          <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
-        </div>
+
+          <Srch/>
+ 
       </div>  );
     }
 }
