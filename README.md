@@ -1,16 +1,17 @@
 # MyReads Project
+## Overview
+This App MyReads is a web app hat is used to search for books and enable you to organize your books depending on categories called shelfs , shelfs is: " Currently reading", "Want To Read", "Read". you can put any book in any shelf using the menu lable , also the app haas a search bar 
+that lets you search for books by title 
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
-
-## TL;DR
+## install
 
 To get started developing right away:
 
 * install all project dependencies with `npm install`
 * install React Router with `npm install  react-router-dom`
 * start the development server with `npm start`
+the application should open in the default browser
 
 ## What You're Getting
 ```bash
