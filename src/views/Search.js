@@ -1,7 +1,49 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Book from '../BooksAPI';
+import { getAll } from '../BooksAPI';
+import {search} from '../BooksAPI';
+
 class Search extends Component {
-    state = {}
+    constructor(props) {
+        super();
+        this.state = {
+            query: "",
+            books: []
+        }
+    }
+
+    async componentDidMount() {
+        try {
+            const books = await getAll();
+            this.props.addBooks(books);
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    handleChange = async e => {
+        try {
+
+            const query = e.target.value;
+            this.setState({ query });
+
+            if (query.trim()) {
+                
+                const results = await search(query);
+                if (results.error) {
+                    this.setState({ books: [] })
+                } else {
+                    this.setState({ books: results })
+                }
+            } else {
+                this.setState({ books: [] });
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
     render() {
         return (<div className="search-books">
             <div className="search-books-bar">
